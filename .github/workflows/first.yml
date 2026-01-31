@@ -18,6 +18,12 @@ jobs:
 
     - name: Build with maven 
       run: mvn clean package -DskipTests
+
+    - name: Upload a build Artefact
+      uses: actions/upload-artifact@v6
+      with:  
+        name: artifact
+        path: target/*.jar
     
   test:
     runs-on: windows-latest
